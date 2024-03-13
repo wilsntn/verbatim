@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres
+    container_name: verbatim-db
+    environment:
+      POSTGRES_PASSWORD: "12345678"
+    ports:
+      - 5432:5432
+    networks:
+      - verbatim-network
+
+networks:
+  verbatim-network:
+    driver: bridge
